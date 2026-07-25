@@ -1,6 +1,6 @@
 import { buttonVariants } from "@/components/ui/button"
 import { FadeIn } from "@/components/fade-in"
-import { ArrowRight, Download, Calendar } from "lucide-react"
+import { ArrowRight, Download } from "lucide-react"
 import Link from "next/link"
 
 export function Hero() {
@@ -42,10 +42,6 @@ export function Hero() {
               <Link href="/resume.pdf" target="_blank" className={buttonVariants({ variant: "outline", size: "lg", className: "rounded-full px-6" })}>
                 <Download className="mr-2 h-4 w-4" />
                 Download resume
-              </Link>
-              <Link href="#contact" className={buttonVariants({ variant: "secondary", size: "lg", className: "rounded-full px-6" })}>
-                <Calendar className="mr-2 h-4 w-4" />
-                Book a call
               </Link>
             </div>
           </FadeIn>
