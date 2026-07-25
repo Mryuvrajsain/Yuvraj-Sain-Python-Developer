@@ -6,22 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Phone, Send, Calendar as CalendarIcon, Loader2 } from "lucide-react"
+import { Mail, Phone, Send, Loader2 } from "lucide-react"
 import { Icons } from "@/components/icons"
 import Link from "next/link"
-import Cal, { getCalApi } from "@calcom/embed-react"
-import { useEffect } from "react"
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi();
-      cal("ui", { styles: { branding: { brandColor: "#000000" } }, hideEventTypeDetails: false, layout: "month_view" });
-    })();
-  }, [])
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -62,14 +54,14 @@ export function Contact() {
           <div className="space-y-2 mb-16 text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Let's Connect</h2>
             <p className="text-muted-foreground text-lg max-w-[800px] mx-auto">
-              Interested in working together or have a question? Reach out through the form or book a call directly.
+              Interested in working together or have a question? Reach out through the form or email me directly.
             </p>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-2xl mx-auto">
           {/* Contact Form & Info */}
-          <FadeIn direction="right" className="space-y-8">
+          <FadeIn direction="up" className="space-y-8">
             <div>
               <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
               <form onSubmit={onSubmit} className="space-y-4">
@@ -145,28 +137,6 @@ export function Contact() {
                 </a>
               </div>
             </div>
-          </FadeIn>
-
-          {/* Cal.com Embed */}
-          <FadeIn direction="left">
-            <Card className="h-full bg-background/50 border-border/50 overflow-hidden flex flex-col">
-              <div className="p-6 border-b border-border/50 bg-muted/20">
-                <h3 className="text-xl font-semibold flex items-center">
-                  <CalendarIcon className="mr-2 h-5 w-5 text-primary" />
-                  Book a 15-min Call
-                </h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Find a time that works for you in my calendar below.
-                </p>
-              </div>
-              <div className="flex-grow min-h-[400px] w-full p-0">
-                <Cal 
-                  calLink="yuvraj-sain/15min"
-                  style={{width:"100%", height:"100%", overflow:"hidden"}}
-                  config={{layout: 'month_view', theme: 'dark'}}
-                />
-              </div>
-            </Card>
           </FadeIn>
         </div>
       </div>
