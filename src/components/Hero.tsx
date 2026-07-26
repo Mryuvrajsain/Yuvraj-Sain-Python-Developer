@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center pt-20 pb-16">
       <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:32px_32px] opacity-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-      
+
       <div className="container px-4 md:px-6 max-w-5xl mx-auto">
         <div className="space-y-6">
           <FadeIn direction="down" delay={0.1}>
@@ -16,12 +16,12 @@ export function Hero() {
               Available for new opportunities
             </div>
           </FadeIn>
-          
+
           <FadeIn delay={0.2}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
               Yuvraj Sain
               <span className="block text-muted-foreground mt-2 text-3xl sm:text-4xl md:text-5xl">
-                Python Backend Developer
+                Python Developer
               </span>
             </h1>
           </FadeIn>
