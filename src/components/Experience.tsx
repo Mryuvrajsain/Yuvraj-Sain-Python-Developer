@@ -7,12 +7,12 @@ import { ChevronDown, ChevronUp, Briefcase } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const currentExperience = {
-  role: "Python Developer Intern",
+  role: "AI/ML Developer",
   company: "AIGETAI",
   location: "Remote",
   period: "Jan 2026 – Jul 2026",
   description: [
-    "Built 50+ REST endpoints for a CRM using Django REST Framework and FastAPI.",
+    "Developed and deployed machine learning models to solve real-world business problems, resulting in a 15% improvement in operational efficiency.",
     "Implemented JWT authentication and role-based permissions for secure multi-tenant access.",
     "Improved API response performance by up to 80% through advanced query and code optimization.",
     "Wrote 50+ automated tests ensuring robust backend reliability.",
