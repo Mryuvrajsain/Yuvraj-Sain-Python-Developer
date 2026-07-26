@@ -10,7 +10,7 @@ const currentExperience = {
   role: "Python Developer Intern",
   company: "AIGETAI",
   location: "Remote",
-  period: "Jan 2026 – Present",
+  period: "Jan 2026 – Jul 2026",
   description: [
     "Built 50+ REST endpoints for a CRM using Django REST Framework and FastAPI.",
     "Implemented JWT authentication and role-based permissions for secure multi-tenant access.",
@@ -68,7 +68,7 @@ export function Experience() {
               <span className="absolute -left-[41px] md:-left-[41px] flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 ring-4 ring-background">
                 <Briefcase className="h-4 w-4 text-primary" />
               </span>
-              
+
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">{currentExperience.role}</h3>
@@ -80,7 +80,7 @@ export function Experience() {
                   {currentExperience.period}
                 </span>
               </div>
-              
+
               <ul className="space-y-3 text-muted-foreground mt-4 list-none pl-0">
                 {currentExperience.description.map((item, i) => (
                   <li key={i} className="relative pl-6">
@@ -94,8 +94,8 @@ export function Experience() {
         </div>
 
         <FadeIn delay={0.2} className="mt-12 text-center md:text-left md:pl-8">
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             onClick={() => setShowPrior(!showPrior)}
             className="text-muted-foreground hover:text-foreground group"
           >
@@ -123,7 +123,7 @@ export function Experience() {
                     <span className="absolute -left-[37px] md:-left-[37px] flex h-6 w-6 items-center justify-center rounded-full bg-muted border border-border ring-4 ring-background">
                       <span className="h-2 w-2 rounded-full bg-muted-foreground" />
                     </span>
-                    
+
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-2">
                       <h4 className="text-lg font-bold text-foreground">{exp.role}</h4>
                       <span className="text-sm font-medium text-muted-foreground font-mono">
