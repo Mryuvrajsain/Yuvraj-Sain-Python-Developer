@@ -8,19 +8,18 @@ import Link from "next/link"
 
 const projects = [
   {
-    title: "StockSphere",
-    description: "An AI-ready, enterprise-grade Inventory Management System designed to streamline inventory operations for businesses of all sizes.",
-    fullDescription: "Built with Clean Architecture and a Service Layer, it provides a scalable platform for managing products, warehouses, suppliers, purchases, sales, and inventory movements. Includes real-time tracking, BI dashboards, workflow automation, and enterprise-grade security.",
-    tags: ["React", "TypeScript", "Django REST Framework", "PostgreSQL", "Docker"],
+    title: "LoanPilot",
+    description: "A production-grade Loan Operations & Credit Decisioning Platform with automated BRE and risk evaluation.",
+    fullDescription: "Automates loan application processing, credit risk assessment via real-time CIBIL score analysis, document verification, and decisioning workflows. Features secure JWT authentication, role-based access control, and complete audit logging.",
+    tags: ["Python", "Django REST Framework", "PostgreSQL", "CIBIL API", "Docker"],
     highlights: [
-      "AI-ready enterprise architecture",
-      "Multi-company & multi-warehouse support",
-      "Real-time inventory tracking",
-      "Business intelligence dashboards",
-      "RESTful APIs with JWT auth",
+      "Automated Business Rules Engine (BRE) for instant credit evaluation",
+      "Real-time CIBIL score analysis & financial risk assessment",
+      "Role-based access control (RBAC) & secure audit logging",
+      "Production deployment with high-throughput REST APIs",
     ],
-    github: "https://github.com/Mryuvrajsain/stocksphere",
-    demo: "#",
+    github: "https://github.com/Mryuvrajsain/LoanPilot",
+    demo: "http://loanpilot.webhop.me/",
     featured: true,
   },
   {
@@ -33,10 +32,38 @@ const projects = [
       "Frictionless UI powered by React 19 & Base UI",
       "Command palette integration (CMDK) for fast navigation",
       "Optimistic UI updates via TanStack Query",
-      "Deployed live with instant responsiveness",
     ],
     github: "https://github.com/Mryuvrajsain/Flowline",
     demo: "https://flowline-lime.vercel.app/",
+    featured: true,
+  },
+  {
+    title: "Account Management App",
+    description: "A streamlined financial tracking and account management web application for transaction monitoring.",
+    fullDescription: "Provides interactive financial dashboards to track balance updates, record transaction histories, and manage client accounts with responsive controls and real-time data handling.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "REST API", "Vercel"],
+    highlights: [
+      "Real-time transaction tracking and account balance computation",
+      "Interactive financial analytics dashboard",
+      "Responsive user interface for seamless multi-device management",
+    ],
+    github: "https://github.com/Mryuvrajsain/account-management-app",
+    demo: "https://account-management-app-ashy.vercel.app/",
+    featured: true,
+  },
+  {
+    title: "StockSphere",
+    description: "An AI-ready, enterprise-grade Inventory Management System designed to streamline inventory operations.",
+    fullDescription: "Built with Clean Architecture and a Service Layer, it provides a scalable platform for managing products, warehouses, suppliers, purchases, sales, and inventory movements. Includes real-time tracking, BI dashboards, workflow automation, and enterprise-grade security.",
+    tags: ["React", "TypeScript", "Django REST Framework", "PostgreSQL", "Docker"],
+    highlights: [
+      "AI-ready enterprise architecture",
+      "Multi-company & multi-warehouse support",
+      "Real-time inventory tracking & BI dashboards",
+      "RESTful APIs with JWT authentication",
+    ],
+    github: "https://github.com/Mryuvrajsain/StockSphere",
+    demo: "",
     featured: true,
   },
 ]
@@ -58,7 +85,7 @@ export function Projects() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <FadeIn key={project.title} delay={index * 0.2} className="h-full">
+            <FadeIn key={project.title} delay={index * 0.1} className="h-full">
               <Card className="flex flex-col h-full bg-background border-border/50 shadow-sm overflow-hidden group">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
@@ -103,10 +130,12 @@ export function Projects() {
                     <Icons.github className="mr-2 h-4 w-4" />
                     View Code
                   </Link>
-                  <Link href={project.demo} target="_blank" className={buttonVariants({ variant: "secondary", size: "sm", className: "w-full sm:w-auto" })}>
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </Link>
+                  {project.demo && project.demo !== "#" && (
+                    <Link href={project.demo} target="_blank" className={buttonVariants({ variant: "secondary", size: "sm", className: "w-full sm:w-auto" })}>
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </Link>
+                  )}
                 </CardFooter>
               </Card>
             </FadeIn>
