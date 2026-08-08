@@ -3,7 +3,6 @@ import { Skills } from "@/components/Skills"
 import { Projects } from "@/components/Projects"
 import { Experience } from "@/components/Experience"
 import { Education } from "@/components/Education"
-import { Contact } from "@/components/Contact"
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
       <Projects />
       <Experience />
       <Education />
-      <Contact />
       
       <footer className="py-8 border-t border-border/50 bg-background text-center">
         <p className="text-sm text-muted-foreground">
